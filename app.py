@@ -49,6 +49,7 @@ def index():
     if request.method == "POST":
         name = request.form.get('name')
         college_name = request.form.get('college_name')
+        print(str(name)+" "+str(college_name))
         return render_template("image.html",contents=makeCerti(name,college_name))
 
     return render_template("index.html")
