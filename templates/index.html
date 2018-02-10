@@ -5,14 +5,84 @@
     <title>Certificate HackVSIT</title>
 </head>
 <body>
+	<style type="text/css">
+		body {
+			width: 100%;
+			height: 100%;
+			padding: 0px;
+			margin: 0px;
+			background: #1488CC;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-<form action="/" method="post">
-    <input type="text" name="name">
-    <input type="text" name="college_name">
-    <input type="submit" name="submit">
+		}
 
-    <input name=_csrf_token type=hidden value="{{ csrf_token() }}">
-</form>
+		.wrap {
+			background: white;
+			width: 700px;
+			padding: 50px;
+			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+			border-radius: 10px;
+			margin: 0 auto;
+			text-align: center;
+			margin-top: 10%;
+		}
+		input {
+			border:none;
+			font-family: sans-serif;
+			color: #00008B;
+			text-align: left;
+			padding: 15px 0px;
+			width: 400px;
+			letter-spacing: 1px;
+			font-weight: bold;
+			text-transform: uppercase;
+			border-bottom: 2px darkblue solid;
+		}
 
+		button {
+			width: 415px;
+			font-weight: bold;
+			border:none;
+			letter-spacing: 2px;
+			background: #1488CC;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			border-bottom: 4px darkblue solid;
+			border-radius: 10px;
+			padding: 15px 17px;
+			cursor: pointer;
+			font-size: 15px;
+			font-family: sans-serif;
+			text-transform: uppercase;
+			color: white;
+		}
+
+		@media screen and (max-width:760px) {
+			.wrap {
+				width: 90%;
+				padding: 15px 5px;
+			}
+
+			input {
+				width: 85%;
+			}
+
+			button {
+				width: 88%;
+				font-size: 13px;
+			}
+		}
+
+	</style>
+
+	<div class="wrap">
+		<form action="/" method="post">
+		    <input type="text" required maxlength="150" name="name" placeholder="Full Name"><br><br>
+		    <input type="text" required maxlength="250" name="college_name" placeholder="College Name"><br><br>
+		    <button type="submit" name="submit">DOWNLOAD CERTIFICATE</button>
+		    <input name=_csrf_token type=hidden value="{{ csrf_token() }}">
+		</form>
+	</div>
 </body>
 </html>
