@@ -43,7 +43,7 @@ def generate_csrf_token():
 app.jinja_env.globals['csrf_token'] = generate_csrf_token
 
 
-# @limiter.limit("3/minute")
+@limiter.limit("3/minute")
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == "POST":
@@ -57,4 +57,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, threaded=True)
+    app.run(debug=False, threaded=True)
