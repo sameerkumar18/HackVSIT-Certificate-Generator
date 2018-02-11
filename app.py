@@ -3,7 +3,7 @@ from flask import Flask,request,render_template,session,abort
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from werkzeug.contrib.fixers import ProxyFix
-from gcs import s3_upload
+from uploader import s3_upload
 import os,uuid
 
 app = Flask(__name__)
