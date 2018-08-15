@@ -1,4 +1,5 @@
-import boto3,uuid
+import boto3, uuid
+import os
 
 def make_filename(filename):
     extension = ""
@@ -16,8 +17,8 @@ def s3_upload(file):
     bucket_name = 'meme-it'
     s3 = boto3.client(
         's3',
-        aws_access_key_id='AKIAJIHVDGPBNYMSDCCA',
-        aws_secret_access_key='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'
+        aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
+        aws_secret_access_key=os.environ.get('AWS_SECRET_KEY')
     )
     Bucket = (bucket_name)
     filename = make_filename(file)
