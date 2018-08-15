@@ -7,7 +7,7 @@ from uploader import s3_upload
 import os,uuid
 
 app = Flask(__name__)
-app.secret_key = 'lol'
+app.secret_key = '5ji*cmvb!_06h3t=+i02*-_6zdho56@^-i38f*ns0dr)-2-'
 
 app.wsgi_app = ProxyFix(app.wsgi_app, num_proxies=1)
 limiter = Limiter(app, key_func=get_remote_address)
@@ -49,7 +49,6 @@ def index():
     if request.method == "POST":
         name = request.form.get('name')
         college_name = request.form.get('college_name')
-        print(str(name)+" "+str(college_name))
         return render_template("image.html",contents=makeCerti(name,college_name))
 
     return render_template("index.html")
